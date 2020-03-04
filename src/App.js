@@ -77,7 +77,7 @@ class App extends Component {
 
     onButtonSubmit = () => {
         this.setState({ imageUrl: this.state.input });
-        fetch('http://localhost:3000/imageurl', {
+        fetch('https://quiet-coast-72156.herokuapp.com/imageurl', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -87,7 +87,7 @@ class App extends Component {
             .then(response => response.json())
             .then(response => {
                 if (response) {
-                    fetch('http://localhost:3000/image', {
+                    fetch('https://quiet-coast-72156.herokuapp.com/image', {
                             method: 'put',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({
@@ -118,27 +118,28 @@ class App extends Component {
     render() {
         const { isSignedIn, imageUrl, route, box } = this.state;
         return ( 
-           <div className = "App" >
+            <div className = "App" >
             <Particles className = 'particles'
-            params = { particlesOptions }/>  
+            params = { particlesOptions }/>   
             <Navigation isSignedIn = { isSignedIn }
-            onRouteChange = { this.onRouteChange }/> 
+            onRouteChange = { this.onRouteChange }/>  
             {route === 'home' ?
                     <div>
-                    <Logo />
-                    <Rank name = { this.state.user.name } entries = { this.state.user.entries }/>  
-                    <ImageLinkForm onInputChange = { this.onInputChange } onButtonSubmit = { this.onButtonSubmit }/>  
-                    <FaceRecognition box = { box } imageUrl = { imageUrl }/> 
-                     </div>
-                     : (route === 'signin'
-                      ?
+                    <Logo/>
+                    <Rank name = { this.state.user.name }
+                    entries = { this.state.user.entries }/>   
+                    <ImageLinkForm onInputChange = { this.onInputChange }
+                    onButtonSubmit = { this.onButtonSubmit }/>   
+                    <FaceRecognition box = { box }
+                    imageUrl = { imageUrl }/>  
+                    </div>: (route === 'signin' ?
                     <Signin loadUser = { this.loadUser }
-                    onRouteChange = { this.onRouteChange }/> 
-                    : 
+                    onRouteChange = { this.onRouteChange }/>  
+                    :
                     <Register loadUser = { this.loadUser }
                     onRouteChange = { this.onRouteChange }/>
-                        )
-            }</div>
+                )
+            } </div>
         );
     }
 }
