@@ -1,5 +1,5 @@
-import React from 'react';
-import './ImageLinkForm.css';
+import React from './node_modules/react';
+import './imageLinkForm.css';
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
     return ( <
@@ -17,10 +17,10 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
         /> <
         button className = 'w-30 grow f4 link ph3 pv2 dib white bg-light-purple'
         onClick = { onButtonSubmit } >
-        Detect < /button> <
-        /div> <
-        /div> <
-        /div>
+        Detect < /button> < /
+        div > <
+        /div> < /
+        div >
     );
 }
 

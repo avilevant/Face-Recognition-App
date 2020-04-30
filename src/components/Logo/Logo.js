@@ -1,21 +1,31 @@
-import React from 'react';
-import Tilt from 'react-tilt';
+import React from './node_modules/react';
+import Tilt from './node_modules/react-tilt';
 import brain from './לוגו ללא רקע מרכז לבנט.gif';
-import './Logo.css';
+import './logo.css';
 
 const Logo = () => {
-    return ( 
-        <div className = 'ma4 mt0' >
-        <Tilt className = "Tilt br2 shadow-2"
+    return ( <
+        div className = 'ma4 mt0' >
+        <
+        Tilt className = "Tilt br2 shadow-2"
         options = {
-            { max: 55 } }
+            { max: 55 }
+        }
         style = {
-            { height: 150, width: 150 } } >
-        <div className = "Tilt-inner pa3" >
-        <img style = {{ paddingTop: '5px' } }  alt = 'logo' src = { brain }/>
-        </div> 
-        </Tilt> 
-        </div>
+            { height: 150, width: 150 }
+        } >
+        <
+        div className = "Tilt-inner pa3" >
+        <
+        img style = {
+            { paddingTop: '5px' }
+        }
+        alt = 'logo'
+        src = { brain }
+        /> < /
+        div > <
+        /Tilt>  < /
+        div >
     );
 }
 
