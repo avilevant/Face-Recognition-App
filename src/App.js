@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import FaceRecognition from './FaceRecognition';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/navigation/navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
