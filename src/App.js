@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import FaceRecognition from './components/faceRecognition/FaceRecognition';
+import FaceRecognition from './components/faceRecognition/faceRecognition';
 import Navigation from './components/navigation/navigation';
 import Signin from './components/signin/signin';
 import Register from './components/register/register';
@@ -117,39 +117,28 @@ class App extends Component {
 
     render() {
         const { isSignedIn, imageUrl, route, box } = this.state;
-        return ( <
-            div className = "App" >
-            <
-            Particles className = 'particles'
-            params = { particlesOptions }
-            />    <
-            Navigation isSignedIn = { isSignedIn }
-            onRouteChange = { this.onRouteChange }
-            />   {
+        return ( 
+            <div className = "App" >
+            <Particles className = 'particles'
+            params = { particlesOptions }/>    <Navigation isSignedIn = { isSignedIn }
+            onRouteChange = { this.onRouteChange }/>   {
             route === 'home' ?
-            <
-            div >
-            <
-            Logo / >
-            <
-            Rank name = { this.state.user.name }
-            entries = { this.state.user.entries }
-            />    <
-            ImageLinkForm onInputChange = { this.onInputChange }
+            <div >
+            <Logo />
+            <Rank name = { this.state.user.name }
+            entries = { this.state.user.entries }/>    
+            <ImageLinkForm onInputChange = { this.onInputChange }
             onButtonSubmit = { this.onButtonSubmit }
-            />    <
-            FaceRecognition box = { box }
+            />    <FaceRecognition box = { box }
             imageUrl = { imageUrl }
-            />   < /
-            div > : (route === 'signin' ? <
-                Signin loadUser = { this.loadUser }
+            />   
+            </div> : (route === 'signin' ? <Signin loadUser = { this.loadUser }
                 onRouteChange = { this.onRouteChange }
-                />  : <
-                Register loadUser = { this.loadUser }
+                />  : <Register loadUser = { this.loadUser }
                 onRouteChange = { this.onRouteChange }
                 />
             )
-        } < /div>
+        } </div>
     );
 }
 }
