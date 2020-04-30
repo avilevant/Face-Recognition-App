@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import FaceRecognition from './components/faceRecognition/FaceRecognition.tmp';
-import Navigation from './components/navigation/navigation.tmp';
-import Signin from './components/signin/signin.tmp';
-import Register from './components/register/register.tmp';
-import Logo from './components/logo/logo.tmp';
-import ImageLinkForm from './components/imageLinkForm/imageLinkForm.tmp';
-import Rank from './components/rank/rank.tmp';
+import FaceRecognition from './components/faceRecognition/FaceRecognition';
+import Navigation from './components/navigation/navigation';
+import Signin from './components/signin/signin';
+import Register from './components/register/register';
+import Logo from './components/logo/logo';
+import ImageLinkForm from './components/imageLinkForm/imageLinkForm';
+import Rank from './components/rank/rank';
 import './App.css';
 
 const particlesOptions = {
